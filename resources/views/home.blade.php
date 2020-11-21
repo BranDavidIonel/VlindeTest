@@ -15,9 +15,47 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <div class="row card">
+                        <h2> All colection : </h2>
+                        <table class="table table-bordered">
+                        <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Link</th>
+                        <th>Color</th>
+                        <th>Type</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                        <th>Show</th>
+                        </tr>
+                        @forelse($my_colection as $line)
+                        <tr>
+                        <td>{{ $line->title }}</td>
+                        <td>{{ $line->description }}</td>
+                        <td><a href="{{URL:: to( $line->link )}}">Link </a></td>
+                        <td>{{ $line->color }}</td>
+                        <td>{{ $line->type }}</td>
+                        <td>
+                        <a class ="btn btn-primary" href="{{URL:: to('my_colection/edit/'.$line->id)}}">Edit </a>
+                        </td>
+                        <td>
+                        <a class ="btn btn-danger" href="{{URL::to('my_colection/delete/'.$line->id)}}" onclick="return confirm ('Are you sure?')">Delete </a>
+                        </td>
+                        <td><a class="btn btn-primary"  href="{{URL:: to('my_colection/show/'.$line->id)}}"> Show </a></td>
+                        </tr>
+                        @empty 
+                        <p> No  colection </p>
+                        @endforelse
+                        </table> 
+                    </div>
+
                 </div>
+
+
             </div>
         </div>
     </div>
+    
+
 </div>
 @endsection

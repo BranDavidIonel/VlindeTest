@@ -16,9 +16,9 @@ class CreateMyColectionsTable extends Migration
         Schema::create('my_colections', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('description');
-            $table->string('link');
-            $table->string('color');
+            $table->text('description')->default('');
+            $table->string('link')->default('');
+            $table->string('color')->default('');
             $table->string('type');
             $table->timestamps();
         });
