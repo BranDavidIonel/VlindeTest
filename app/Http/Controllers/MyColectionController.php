@@ -81,4 +81,11 @@ class MyColectionController extends Controller
 
 
     }
+    public function delete($id)
+    {
+        $my_colection=My_colection::find($id);
+        $my_colection->delete();
+        return redirect()->route('my_colection.index')
+                        ->with('success','Colectin delete successfully!');
+    }
 }
