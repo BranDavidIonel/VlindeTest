@@ -33,22 +33,24 @@
                         </tr>
                         @forelse($my_colection as $line)
                         <tr>
-                        <td> 
-                        @if($line->type=="movie")
-                        <img src="{{URL:: to('media\icons\move.svg')}}" width="20px"/>
-                        @endif
-                        @if($line->type=="book")
+                        <td>
+                        @if($line->type==1)
                         <img src="{{URL:: to('media\icons\book.png')}}" width="20px"/>
                         @endif
-                        @if($line->type=="music")
+                        @if($line->type==2)
                         <img src="{{URL:: to('media\icons\music.svg')}}" width="20px"/>
-                        @endif      
+                        @endif   
+                        @if($line->type==3)
+                        <img src="{{URL:: to('media\icons\move.svg')}}" width="20px"/>
+                        @endif
+                       
+                            
                         
                         {{ $line->title }}</td>
                         <td>{{ $line->description }}</td>
                         <td><a href="{{URL:: to( $line->link )}}">Link </a></td>
                         <td>{{ $line->color }}</td>
-                        <td>{{ $line->type }}</td>
+                        <td>{{ $line->getType() }}</td>
                         <td>
                         <a class ="btn btn-primary" href="{{URL:: to('colection/edit/'.$line->id)}}">Edit </a>
                         </td>

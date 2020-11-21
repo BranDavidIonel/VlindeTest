@@ -30,15 +30,15 @@
                     <div class="row">
                     <strong>Old Type:</strong>
                         
-                        <label>{{$colection->type}} <label> 
+                        <label>{{$colection->getType()}} <label> 
                         
                     </div>
                     <strong> New Type</strong> 
                     <br>
                     <select
                     name="type"  required>
-                    @foreach($types as $type)
-                        <option value="{{ $type}}">{{$type}} </option>
+                    @foreach($colection->getTypes() as $x => $type)
+                        <option value="{{ $x}}">{{$type}} </option>
                     @endforeach
                     </select>
                     <div>

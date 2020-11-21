@@ -6,14 +6,8 @@ use Illuminate\Http\Request;
 use App\My_colection;
 class MyColectionController extends Controller
 {
-    protected $types=array(
-        1=>"book",
-        2=>"music",
-        3=>"movie"
-    );
-    public function getTypes(){
-        return $this->types;
-    }
+   
+    
     public function index(){
         $my_colection=My_Colection::get()->all();
        
@@ -23,7 +17,8 @@ class MyColectionController extends Controller
     {
         
         
-        $types=$this->getTypes();
+        $my_colection=new My_colection();
+        $types=$my_colection->getTypes();
         return view('colection.create',compact('types'));
         
     }
@@ -56,7 +51,7 @@ class MyColectionController extends Controller
     }
     public function edit($id)
     {
-        $types=$this->getTypes();
+       
         $colection=My_colection::find($id);
             
         return view('colection.edit',compact('colection','types'));

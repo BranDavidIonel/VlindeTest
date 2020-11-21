@@ -32,8 +32,8 @@
                     
                     <select
                     name="type"  required>
-                    @foreach($types as $type)
-                        <option value="{{ $type}}">{{$type}} </option>
+                    @foreach($types as $x=>$type)
+                        <option value="{{ $x }}">{{$type}} </option>
                     @endforeach
                     </select>
                     <div>

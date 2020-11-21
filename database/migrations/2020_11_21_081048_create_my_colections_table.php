@@ -19,7 +19,7 @@ class CreateMyColectionsTable extends Migration
             $table->text('description')->default('');
             $table->string('link')->default('');
             $table->string('color')->default('');
-            $table->string('type');
+            $table->tinyInteger('type')->default(0);
             $table->timestamps();
         });
     }
