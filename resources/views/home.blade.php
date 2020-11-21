@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
-
+                
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -33,7 +33,18 @@
                         </tr>
                         @forelse($my_colection as $line)
                         <tr>
-                        <td>{{ $line->title }}</td>
+                        <td> 
+                        @if($line->type=="movies")
+                        <img src="{{URL:: to('media\icons\move.svg')}}" width="50px"/>
+                        @endif
+                        @if($line->type=="book")
+                        <img src="{{URL:: to('media\icons\book.png')}}" width="50px"/>
+                        @endif
+                        @if($line->type=="music")
+                        <img src="{{URL:: to('media\icons\music.svg')}}" width="50px"/>
+                        @endif      
+                        
+                        {{ $line->title }}</td>
                         <td>{{ $line->description }}</td>
                         <td><a href="{{URL:: to( $line->link )}}">Link </a></td>
                         <td>{{ $line->color }}</td>
