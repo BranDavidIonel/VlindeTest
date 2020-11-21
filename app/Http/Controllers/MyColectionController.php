@@ -51,7 +51,7 @@ class MyColectionController extends Controller
 
       $my_colection->save();
 
-      return redirect('/home');
+      return redirect()->route('my_colection.index');
       
     }
     public function edit($id)
@@ -66,7 +66,7 @@ class MyColectionController extends Controller
  
     public function update(Request $request, $id)
     {
-        $colection=My_colection::find($id);
+        $my_colection=My_colection::find($id);
         $my_colection->title=request('title');
         $my_colection->description=request('description');
         $my_colection->color=request('color');
@@ -76,7 +76,7 @@ class MyColectionController extends Controller
  
 
 
-     return redirect()->route('colection.index')
+     return redirect()->route('my_colection.index')
                         ->with('success','Colectin updated successfully!');
 
 

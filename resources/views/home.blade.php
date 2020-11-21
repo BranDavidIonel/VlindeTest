@@ -34,7 +34,7 @@
                         @forelse($my_colection as $line)
                         <tr>
                         <td> 
-                        @if($line->type=="movies")
+                        @if($line->type=="movie")
                         <img src="{{URL:: to('media\icons\move.svg')}}" width="20px"/>
                         @endif
                         @if($line->type=="book")

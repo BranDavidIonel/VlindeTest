@@ -27,5 +27,5 @@ Route::post('/colection/store', 'MyColectionController@store')->name('colection.
 
 Route::get('/colection/show/{article}', 'MyColectionController@show')->name('colection.show');
 Route::get('/colection/edit/{article}', 'MyColectionController@edit')->name('colection.edit');
-Route::post('/article/update/{article}', 'MyColectionController@update')->name('colection.update');
+Route::post('/colection/update/{article}', 'MyColectionController@update')->name('colection.update');
 Route::get('/colection/delete/{article}', 'MyColectionController@delete')->name('colection.delete');

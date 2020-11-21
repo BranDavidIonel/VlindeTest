@@ -17,7 +17,8 @@
                     @endif
                     
                     <strong>Description </strong>
-                    <textarea type="text" name="description" class="form-control " placeholder="details" style="height:150px" value="{{$colection->description}}"> 
+                    <textarea type="text" name="description" class="form-control " placeholder="details" style="height:150px" >
+                    {{$colection->description}} 
                     </textarea>
                     
                     <strong>Color </strong>
