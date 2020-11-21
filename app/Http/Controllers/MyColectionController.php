@@ -25,7 +25,7 @@ class MyColectionController extends Controller
     public function store(Request $request)
     {
      //dump(request()->all());
-     /*
+     
       $validatedAttributes=request()->validate([
         'title'=>['request','min:2','max:255 '],
         //'title'=>'required',
@@ -33,7 +33,7 @@ class MyColectionController extends Controller
         'type'=>'required'
         
         ]);
-        */
+        
 
 
       $my_colection=new My_colection();
@@ -51,7 +51,7 @@ class MyColectionController extends Controller
     }
     public function edit($id)
     {
-       
+        
         $colection=My_colection::find($id);
             
         return view('colection.edit',compact('colection','types'));
@@ -61,6 +61,12 @@ class MyColectionController extends Controller
  
     public function update(Request $request, $id)
     {
+        $validatedAttributes=request()->validate([
+            'title'=>['request','min:2','max:255 '],
+           
+            'type'=>'required'
+            
+            ]);
         $my_colection=My_colection::find($id);
         $my_colection->title=request('title');
         $my_colection->description=request('description');
