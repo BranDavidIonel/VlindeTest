@@ -15,6 +15,9 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <div class="row">
+                        <a class="btn btn-primary" href="{{URL:: to('colection/create')}}">Add </a>
+                    </div>
                     <div class="row card">
                         <h2> All colection : </h2>
                         <table class="table table-bordered">
@@ -36,12 +39,12 @@
                         <td>{{ $line->color }}</td>
                         <td>{{ $line->type }}</td>
                         <td>
-                        <a class ="btn btn-primary" href="{{URL:: to('my_colection/edit/'.$line->id)}}">Edit </a>
+                        <a class ="btn btn-primary" href="{{URL:: to('colection/edit/'.$line->id)}}">Edit </a>
                         </td>
                         <td>
-                        <a class ="btn btn-danger" href="{{URL::to('my_colection/delete/'.$line->id)}}" onclick="return confirm ('Are you sure?')">Delete </a>
+                        <a class ="btn btn-danger" href="{{URL::to('colection/delete/'.$line->id)}}" onclick="return confirm ('Are you sure?')">Delete </a>
                         </td>
-                        <td><a class="btn btn-primary"  href="{{URL:: to('my_colection/show/'.$line->id)}}"> Show </a></td>
+                        <td><a class="btn btn-primary"  href="{{URL:: to('colection/show/'.$line->id)}}"> Show </a></td>
                         </tr>
                         @empty 
                         <p> No  colection </p>
