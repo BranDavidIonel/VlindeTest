@@ -37,7 +37,7 @@
                     @endforeach
                     </select>
                     <div>
-                    @error('tags')
+                    @error('type')
                         <p> {{$message}} </p>
                     @enderror
                     </div>

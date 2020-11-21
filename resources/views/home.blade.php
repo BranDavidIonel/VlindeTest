@@ -35,13 +35,13 @@
                         <tr>
                         <td> 
                         @if($line->type=="movies")
-                        <img src="{{URL:: to('media\icons\move.svg')}}" width="50px"/>
+                        <img src="{{URL:: to('media\icons\move.svg')}}" width="20px"/>
                         @endif
                         @if($line->type=="book")
-                        <img src="{{URL:: to('media\icons\book.png')}}" width="50px"/>
+                        <img src="{{URL:: to('media\icons\book.png')}}" width="20px"/>
                         @endif
                         @if($line->type=="music")
-                        <img src="{{URL:: to('media\icons\music.svg')}}" width="50px"/>
+                        <img src="{{URL:: to('media\icons\music.svg')}}" width="20px"/>
                         @endif      
                         
                         {{ $line->title }}</td>
