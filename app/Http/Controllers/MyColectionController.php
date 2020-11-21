@@ -27,8 +27,8 @@ class MyColectionController extends Controller
      //dump(request()->all());
      
       $validatedAttributes=request()->validate([
-        'title'=>['request','min:2','max:255 '],
-        //'title'=>'required',
+        //'title'=>['requered','min:2','max:255 '],
+        'title'=>'required',
         'descripton'=>'required',
         'type'=>'required'
         
@@ -62,8 +62,8 @@ class MyColectionController extends Controller
     public function update(Request $request, $id)
     {
         $validatedAttributes=request()->validate([
-            'title'=>['request','min:2','max:255 '],
-           
+            //'title'=>['requered','min:2','max:255 '],
+            'title'=>'required',
             'type'=>'required'
             
             ]);
