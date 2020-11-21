@@ -34,18 +34,8 @@
                         @forelse($my_colection as $line)
                         <tr>
                         <td>
-                        @if($line->type==1)
-                        <img src="{{URL:: to('media\icons\book.png')}}" width="20px"/>
-                        @endif
-                        @if($line->type==2)
-                        <img src="{{URL:: to('media\icons\music.svg')}}" width="20px"/>
-                        @endif   
-                        @if($line->type==3)
-                        <img src="{{URL:: to('media\icons\move.svg')}}" width="20px"/>
-                        @endif
-                       
-                            
-                        
+                                                
+                        <img src="{{URL:: to($line->getIconRef())}}" width="10px"/>
                         {{ $line->title }}</td>
                         <td>{{ $line->description }}</td>
                         <td><a href="{{URL:: to( $line->link )}}">Link </a></td>

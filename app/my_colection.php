@@ -18,4 +18,16 @@ class My_colection extends Model
     public function getTypes(){
         return $this->types;
     }
+    public function getIconRef(){
+        if($this->type==1){
+            return "media\icons\book.png";
+        }else if ($this->type==2){
+            return "media\icons\music.svg";
+        }else if($this->type==3){
+            return "media\icons\move.svg'";
+        }else{
+            return "";
+        }
+                        
+    }
 }
